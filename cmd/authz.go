@@ -120,7 +120,7 @@ func authzRevokeAuthorizationCmd(a *appState) *cobra.Command {
 				Grantee:    cl.MustEncodeAccAddr(eeAddr),
 				MsgTypeUrl: args[1],
 			}
-			return cl.HandleAndPrintMsgSend(cl.SendMsg(cmd.Context(), msg))
+			return cl.HandleAndPrintMsgSend(cl.SendMsg(cmd.Context(), msg, ""))
 		},
 	}
 	return cmd

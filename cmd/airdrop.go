@@ -105,7 +105,7 @@ func airdropCmd(a *appState) *cobra.Command {
 					multiMsg.Inputs = append(multiMsg.Inputs, banktypes.Input{cl.MustEncodeAccAddr(address), sdk.NewCoins(amount)})
 					retry.Do(func() error {
 						fmt.Fprintf(cmd.OutOrStdout(), "sending tx\n")
-						res, err := cl.SendMsgs(cmd.Context(), []sdk.Msg{multiMsg})
+						res, err := cl.SendMsgs(cmd.Context(), []sdk.Msg{multiMsg}, "")
 						if err != nil || res.Code != 0 {
 							if err != nil {
 								fmt.Fprintf(cmd.OutOrStdout(), "failed to send airdrop: %s\n", err)

@@ -65,7 +65,7 @@ $ lens tx staking delegate cosmosvaloper1sjllsnramtg3ewxqwwrwjxfgc4n4ef9u2lcnj0 
 				ValidatorAddress: cl.MustEncodeValAddr(valAddr),
 				Amount:           amount,
 			}
-			return cl.HandleAndPrintMsgSend(cl.SendMsg(cmd.Context(), msg))
+			return cl.HandleAndPrintMsgSend(cl.SendMsg(cmd.Context(), msg, ""))
 
 		},
 	}
@@ -116,7 +116,7 @@ $ lens tx staking redelegate cosmosvaloper1sjllsnramtg3ewxqwwrwjxfgc4n4ef9u2lcnj
 				Amount:              amount,
 			}
 
-			return cl.HandleAndPrintMsgSend(cl.SendMsg(cmd.Context(), msg))
+			return cl.HandleAndPrintMsgSend(cl.SendMsg(cmd.Context(), msg, ""))
 		},
 	}
 

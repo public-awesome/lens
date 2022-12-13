@@ -88,7 +88,7 @@ $ lens tx withdraw-rewards --from mykey --all
 				msgs = append(msgs, types.NewMsgWithdrawValidatorCommission(sdk.ValAddress(valAddr)))
 			}
 
-			return cl.HandleAndPrintMsgSend(cl.SendMsgs(cmd.Context(), msgs))
+			return cl.HandleAndPrintMsgSend(cl.SendMsgs(cmd.Context(), msgs, ""))
 		},
 	}
 	cmd.Flags().BoolP(FlagCommission, "c", false, "withdraw commission from a validator")
